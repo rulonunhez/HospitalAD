@@ -1,15 +1,14 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 
 @Entity
 @Table(name="Personas")
-public class Persona {
+public class Personal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idPersona;
+    private int idPersonal;
 
     private String dni;
 
@@ -21,19 +20,10 @@ public class Persona {
 
     private int telefono;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(
-            name= "personas_plantas",
-            joinColumns = @JoinColumn(name="idPersona"),
-            inverseJoinColumns = @JoinColumn(name="idPlanta")
-    )
-    private ArrayList<Planta> plantas;
-
-
-    public Persona() {
+    public Personal() {
     }
 
-    public Persona(String dni, int nss, String nombre, String direccion, int telefono) {
+    public Personal(String dni, int nss, String nombre, String direccion, int telefono) {
         this.dni = dni;
         this.nss = nss;
         this.nombre = nombre;
@@ -41,19 +31,8 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    public Persona(String dni, int nss, String nombre, String direccion, int telefono, ArrayList<Planta> plantas) {
-        this.dni = dni;
-        this.nss = nss;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.plantas = plantas;
-    }
-
-
-
-    public int getIdPersona() {
-        return idPersona;
+    public int getIdPersonal() {
+        return idPersonal;
     }
 
     public String getDni() {
@@ -94,18 +73,5 @@ public class Persona {
 
     public void setTelefono(int telefono) {
         this.telefono = telefono;
-    }
-
-    public ArrayList<Planta> getPlantas() {
-        return plantas;
-    }
-
-    public void setPlantas(ArrayList<Planta> plantas) {
-        this.plantas = plantas;
-    }
-
-    public void addPlanta(Planta planta){
-        plantas.add(planta);
-
     }
 }

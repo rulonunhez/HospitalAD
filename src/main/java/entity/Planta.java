@@ -13,14 +13,10 @@ public class Planta {
 
     private String nombre;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(
-            name= "personas_plantas",
-            joinColumns = @JoinColumn(name= "idPlanta"),
-            inverseJoinColumns = @JoinColumn(name= "idPersona")
-    )
-    private ArrayList<Persona> personalEnPlanta;
 
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinColumn(name = "limpiador")
+    private Limpiador limpiador;
 
 
     public Planta() {
@@ -31,9 +27,6 @@ public class Planta {
         this.nombre = nombre;
     }
 
-
-
-
     public String getNombre() {
         return nombre;
     }
@@ -42,8 +35,11 @@ public class Planta {
         this.nombre = nombre;
     }
 
-    public void addPersona(Persona persona){
-        personalEnPlanta.add(persona);
+    public Limpiador getLimpiador() {
+        return limpiador;
+    }
 
+    public void setLimpiador(Limpiador limpiador) {
+        this.limpiador = limpiador;
     }
 }
