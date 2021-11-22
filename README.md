@@ -8,9 +8,12 @@ EjercicioDelHospital
 
 2. Table per Class
 ![Table per Class](img/Table_Per_Class.PNG)
+![Table per Class](img/TablePerClassCelador.PNG)
 
 3. Joined
 ![Joined](img/Joined.PNG)
+![Joined](img/JoinedCelador.PNG)
+![Joined](img/JoinedLimpiador.PNG)
 
 
 ### Solución
