@@ -2,13 +2,15 @@ package entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Table(name = "Limpiadores")
 @DiscriminatorValue(value = "4")
 public class Limpiador extends Personal{
 
     @OneToMany(mappedBy = "limpiador")
-    private ArrayList<Planta> plantas;
+    private List<Planta> plantas;
 
     public Limpiador() {
 
@@ -27,7 +29,7 @@ public class Limpiador extends Personal{
         return super.getIdPersonal();
     }
 
-    public ArrayList<Planta> getPlantas() {
+    public List<Planta> getPlantas() {
         return plantas;
     }
 

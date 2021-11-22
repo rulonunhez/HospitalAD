@@ -2,13 +2,15 @@ package entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Celadores")
+@DiscriminatorValue(value = "3")
 public class Celador extends Personal{
 
     @OneToMany(mappedBy = "celador", cascade = CascadeType.ALL)
-    private ArrayList<Turno> turnos;
+    private List<Turno> turnos;
 
 
     public Celador() {
@@ -26,7 +28,7 @@ public class Celador extends Personal{
     }
 
 
-    public ArrayList<Turno> getTurnos() {
+    public List<Turno> getTurnos() {
         return turnos;
     }
 

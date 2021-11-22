@@ -4,6 +4,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Personas")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "employee_type",discriminatorType = DiscriminatorType.INTEGER)
+@DiscriminatorValue(value = "0")
+
 public class Personal {
 
     @Id
