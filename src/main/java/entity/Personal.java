@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Personal {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idPersonal;
 
     private String dni;

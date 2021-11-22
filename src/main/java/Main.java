@@ -22,12 +22,16 @@ public class Main {
 
         Limpiador limpiador1= new Limpiador("1",1,"Don limpio",direccion1,1,plantas);
         Celador celador1= new Celador("2",2,"El pepe",direccion2,2,turnos);
+        planta1.setLimpiador(limpiador1);
+        turno1.setCelador(celador1);
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
         EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
         em.persist(limpiador1);
         em.persist(celador1);
-
+        em.persist(turno1);
+        em.persist(planta1);
         em.getTransaction().commit();
         em.close();
         emf.close();

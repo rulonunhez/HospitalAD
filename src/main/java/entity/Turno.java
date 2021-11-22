@@ -48,4 +48,8 @@ public class Turno {
     public void setFechaFinalizar(Date fechaFinalizar) {
         this.fechaFinalizar = fechaFinalizar;
     }
+
+    public Celador getCelador() { return celador; }
+
+    public void setCelador(Celador celador) { this.celador = celador; }
 }
