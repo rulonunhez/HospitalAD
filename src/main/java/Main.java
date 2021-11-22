@@ -1,7 +1,4 @@
-import entity.Celador;
-import entity.Limpiador;
-import entity.Planta;
-import entity.Turno;
+import entity.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,9 +17,11 @@ public class Main {
         plantas.add(planta1);
         Turno turno1= new Turno(fecha_inicio,fecha_fin);
         turnos.add(turno1);
+        Direccion direccion1 = new Direccion("limpiador 1");
+        Direccion direccion2 = new Direccion("direccion 1");
 
-        Limpiador limpiador1= new Limpiador("1",1,"Don limpio","limpiador 1",1,plantas);
-        Celador celador1= new Celador("2",2,"El pepe","direccion 1",2,turnos);
+        Limpiador limpiador1= new Limpiador("1",1,"Don limpio",direccion1,1,plantas);
+        Celador celador1= new Celador("2",2,"El pepe",direccion2,2,turnos);
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
         EntityManager em = emf.createEntityManager();

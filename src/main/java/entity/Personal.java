@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "employee_type",discriminatorType = DiscriminatorType.INTEGER)
 @DiscriminatorValue(value = "0")
-
+//@Inheritance(strategy = InheritanceType.JOINED)
 public class Personal {
 
     @Id
@@ -20,14 +20,15 @@ public class Personal {
 
     private String nombre;
 
-    private String direccion;
+    @Embedded
+    private Direccion direccion;
 
     private int telefono;
 
     public Personal() {
     }
 
-    public Personal(String dni, int nss, String nombre, String direccion, int telefono) {
+    public Personal(String dni, int nss, String nombre, Direccion direccion, int telefono) {
         this.dni = dni;
         this.nss = nss;
         this.nombre = nombre;
@@ -63,11 +64,11 @@ public class Personal {
         this.nombre = nombre;
     }
 
-    public String getDireccion() {
+    public Direccion getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
+    public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
 

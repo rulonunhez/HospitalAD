@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Limpiadores")
-@DiscriminatorValue(value = "4")
+//@Table(name = "Limpiadores")
+@DiscriminatorValue(value = "1")
 public class Limpiador extends Personal{
 
     @OneToMany(mappedBy = "limpiador")
@@ -16,12 +16,12 @@ public class Limpiador extends Personal{
 
     }
 
-    public Limpiador(String dni, int nss, String nombre, String direccion, int telefono, ArrayList<Planta> plantas) {
+    public Limpiador(String dni, int nss, String nombre, Direccion direccion, int telefono, ArrayList<Planta> plantas) {
         super(dni, nss, nombre, direccion, telefono);
         this.plantas = plantas;
     }
 
-    public Limpiador(String dni, int nss, String nombre, String direccion, int telefono) {
+    public Limpiador(String dni, int nss, String nombre, Direccion direccion, int telefono) {
         super(dni, nss, nombre, direccion, telefono);
     }
 
