@@ -3,14 +3,14 @@ EjercicioDelHospital
 
 ### Capturas
 
-1.
+1. Single Table
 ![Single Table](img/SingleTable.PNG)
 
-2.
+2. Table per Class
 ![Table per Class](img/Table_Per_Class.PNG)
 
-3.
-![Joint](img/Joined.PNG)
+3. Joined
+![Joined](img/Joined.PNG)
 
 
 ### Solución
