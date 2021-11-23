@@ -1,11 +1,11 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 
 @Entity
-@Table(name = "Turnos")
+@Table(name = "turnos")
 public class Turno {
 
     @Id
@@ -13,10 +13,10 @@ public class Turno {
     private int idTurno;
 
     @Column(name = "fecha_inicio")
-    private Date fechaEmpezar;
+    private LocalDate fechaEmpezar;
 
     @Column(name = "fecha_fin")
-    private Date fechaFinalizar;
+    private LocalDate fechaFinalizar;
 
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -24,7 +24,7 @@ public class Turno {
     private Celador celador;
 
 
-    public Turno(Date fechaEmpezar, Date fechaFinalizar) {
+    public Turno(LocalDate fechaEmpezar, LocalDate fechaFinalizar) {
         this.fechaEmpezar = fechaEmpezar;
         this.fechaFinalizar = fechaFinalizar;
     }
@@ -33,19 +33,19 @@ public class Turno {
 
     }
 
-    public Date getFechaEmpezar() {
+    public LocalDate getFechaEmpezar() {
         return fechaEmpezar;
     }
 
-    public void setFechaEmpezar(Date fechaEmpezar) {
+    public void setFechaEmpezar(LocalDate fechaEmpezar) {
         this.fechaEmpezar = fechaEmpezar;
     }
 
-    public Date getFechaFinalizar() {
+    public LocalDate getFechaFinalizar() {
         return fechaFinalizar;
     }
 
-    public void setFechaFinalizar(Date fechaFinalizar) {
+    public void setFechaFinalizar(LocalDate fechaFinalizar) {
         this.fechaFinalizar = fechaFinalizar;
     }
 
