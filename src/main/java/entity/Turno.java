@@ -19,7 +19,7 @@ public class Turno {
     private LocalDate fechaFinalizar;
 
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "celador")
     private Celador celador;
 
